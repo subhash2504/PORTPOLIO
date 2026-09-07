@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ArrowDown, ExternalLink, Download, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Hero3DScene from './Hero3DScene';
 import { personalInfo } from '../data/portfolioData';
 
 const roles = ['AI Engineer', 'ML Developer', 'Full-Stack Developer', 'Problem Solver'];
@@ -143,22 +144,17 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column (Profile Image + AI Visuals) */}
+          {/* Right Column (3D WebGL Scene + Profile Image) */}
           <motion.div
-            className="relative flex justify-center items-center order-1 lg:order-2 h-[400px] lg:h-[600px] w-full"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="relative flex justify-center items-center order-1 lg:order-2 h-[420px] lg:h-[600px] w-full"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Orbital ring */}
-            <div className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border border-dashed border-primary-500/20 animate-spin-slow hidden md:block" />
-            
-            {/* Glowing dots orbiting */}
-            <div className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] animate-spin-slow hidden md:block" style={{ animationDuration: '15s' }}>
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary-400 shadow-[0_0_10px_#8b5cf6]" />
-              <div className="absolute bottom-1/4 right-0 translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-cyber-400 shadow-[0_0_10px_#06b6d4]" />
-              <div className="absolute bottom-1/4 left-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-primary-300 shadow-[0_0_10px_#a78bfa]" />
+            {/* 3D WebGL Canvas Scene */}
+            <div className="absolute inset-0 z-0">
+              <Hero3DScene />
             </div>
 
             {/* Code snippet badges */}

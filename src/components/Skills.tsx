@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skillCategories } from '../data/portfolioData';
+import Skills3DScene from './Skills3DScene';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -42,14 +43,25 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-4">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyber-400">Skills</span>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-cyber-400">Skills & Architecture</span>
           </h2>
-          <p className="text-surface-200/70 max-w-2xl mx-auto text-lg">
-            Technologies, tools, and methodologies I use to build premium digital experiences.
+          <p className="text-surface-200/70 max-w-2xl mx-auto text-lg mb-8">
+            Interactive 3D Tech Orbit — drag to rotate and explore technologies.
           </p>
+        </motion.div>
+
+        {/* 3D Interactive Tech Sphere */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <Skills3DScene />
         </motion.div>
 
         <motion.div
