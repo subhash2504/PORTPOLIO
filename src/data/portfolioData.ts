@@ -48,6 +48,7 @@ export interface ExperienceItem {
   title: string;
   company: string;
   duration: string;
+  location?: string;
   description: string[];
   type: 'internship' | 'job';
 }

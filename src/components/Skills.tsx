@@ -65,7 +65,7 @@ const Skills: React.FC = () => {
             
             return (
               <motion.div
-                key={category.id}
+                key={index}
                 variants={cardVariants}
                 whileHover={{ y: -4 }}
                 className={`glass-card-hover p-6 md:p-8 rounded-2xl group ${

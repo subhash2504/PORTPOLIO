@@ -48,7 +48,7 @@ const Certifications: React.FC = () => {
                   <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent my-4"></div>
                   
                   <a
-                    href={cert.url}
+                    href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-800 text-white text-sm font-medium hover:bg-surface-700 transition-colors border border-white/5 hover:border-white/10"

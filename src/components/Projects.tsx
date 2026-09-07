@@ -23,7 +23,7 @@ const Projects = () => {
         <div className="flex flex-col gap-8 md:gap-12 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id || index}
+              key={index}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -104,9 +104,9 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4 mt-auto pt-4 border-t border-white/5">
-                  {project.githubUrl && (
+                  {(project.github || (project as any).githubUrl) && (
                     <a
-                      href={project.githubUrl}
+                      href={project.github || (project as any).githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-secondary flex items-center gap-2 group hover:scale-105 transition-transform"
@@ -115,9 +115,9 @@ const Projects = () => {
                       <span>GitHub</span>
                     </a>
                   )}
-                  {project.liveUrl && (
+                  {(project.demo || (project as any).liveUrl) && (
                     <a
-                      href={project.liveUrl}
+                      href={project.demo || (project as any).liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary flex items-center gap-2 group hover:scale-105 transition-transform"

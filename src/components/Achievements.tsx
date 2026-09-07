@@ -22,7 +22,7 @@ const Achievements = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {achievements.map((achievement, index) => (
             <motion.div
-              key={achievement.id || index}
+              key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}

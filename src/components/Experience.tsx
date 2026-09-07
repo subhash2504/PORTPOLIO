@@ -71,7 +71,7 @@ const Experience: React.FC = () => {
                         
                         <div className="flex items-center gap-2 text-sm text-surface-200/50 font-mono mb-4">
                           <Calendar className="w-4 h-4" />
-                          <span>{exp.period}</span>
+                          <span>{exp.duration}</span>
                         </div>
                         
                         <div className="glow-line my-5" />
